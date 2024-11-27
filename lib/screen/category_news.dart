@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_api/Screen/news_details.dart';
+import 'package:news_app_api/Screen/news_detail.dart';
 import 'package:news_app_api/Services/services.dart';
 
 import '../model/new_model.dart';
@@ -16,8 +16,6 @@ class SelectedCategoryNews extends StatefulWidget {
 class _SelectedCategoryNewsState extends State<SelectedCategoryNews> {
   List<NewsModel> articles = [];
   bool isLoadin = true;
-  
-  get newsModel => null;
   getNews() async {
     CategoryNews news = CategoryNews();
     await news.getNews(widget.category);
@@ -62,10 +60,7 @@ class _SelectedCategoryNewsState extends State<SelectedCategoryNews> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) {
-                            return NewsDetail(newsModel: newsModel); //Directly return the widget instance
-                          },
-                          
+                          builder: (context) => NewsDetail(newsModel: article),
                         ),
                       );
                     },
@@ -100,4 +95,6 @@ class _SelectedCategoryNewsState extends State<SelectedCategoryNews> {
             ),
     );
   }
+  
+
 }

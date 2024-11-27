@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_api/Screen/category_news.dart';
-import 'package:news_app_api/Screen/news_details.dart';
+import 'package:news_app_api/Screen/news_detail.dart';
 import 'package:news_app_api/Services/services.dart';
 import 'package:news_app_api/model/category_data.dart';
 
@@ -15,8 +15,6 @@ _NewsHomeScreenState createState() => _NewsHomeScreenState();
 
 }
 
-class NewsHomeScreenState {
-}
 
 class _NewsHomeScreenState extends State<NewsHomeScreen> {
   List<NewsModel> articles = [];
